@@ -1,0 +1,47 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.mapper.AdminMapper">
+	<resultMap type="com.library.bean.Admin" id="adminMap">
+		<id property="uuid" column="uuid"/>
+		<result property="account" column="account"/>
+		<result property="pwd" column="pwd"/>
+		<result property="name" column="name"/>
+		<result property="sex" column="sex"/>
+		<result property="idNo" column="id_no"/>
+		<result property="tel" column="tel"/>
+	</resultMap>
+	<select id="selByAccountAndPwd" resultMap="adminMap">
+		select * from admin where account=#{account} and pwd=#{pwd};
+	</select>
+	<select id="selAll" resultMap="adminMap">
+		select * from admin;
+	</select>
+	<select id="selByName" resultMap="adminMap">
+		select * from admin where name=#{name};
+	</select>
+	<select id="selBySex" resultMap="adminMap">
+		select * from admin where sex=#{sex};
+	</select>
+	<select id="selByIdNo" resultMap="adminMap">
+		select * from admin where id_no=#{idNo};
+	</select>
+	<select id="selByIdNo2" resultMap="adminMap">
+		select * from admin where id_no=#{idNo};
+	</select>
+	<select id="selByTel" resultMap="adminMap">
+		select * from admin where tel=#{tel};
+	</select>
+	<select id="selByAccount" resultMap="adminMap">
+		select * from admin where account=#{account};
+	</select>
+	<delete id="deleteByUuid">
+		delete from admin where uuid=#{uuid};
+	</delete>
+	<insert id="insertAdmin">
+		insert into admin values(#{uuid},#{account},#{pwd},#{name},#{sex},#{idNo},#{tel});
+	</insert>
+	<update id="updetPwd">
+		update admin set pwd=#{pwd} where uuid=#{uuid};
+	</update>
+</mapper>

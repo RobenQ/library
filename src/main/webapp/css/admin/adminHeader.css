@@ -1,0 +1,157 @@
+body{
+	width: 1535px;
+	height: 880px;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+header{
+	background: #015293;
+	height:150px;
+	line-height: 100px;
+}
+header img{
+	margin-left: 5%;
+	margin-top: 3%;
+	height: 50px;
+}
+
+.title{
+	margin-top: -8%;
+	margin-left: 35%;
+	color: white;
+}
+
+.user{
+	margin-top: -10%;
+	margin-left: 88%;
+	color: white;
+}
+
+.main{
+		width: 100%;
+		height: 580px;
+}
+
+.mainLeft{
+	width: 15%;
+	height: 580px;
+	float: left;
+	margin-top: 0px;
+	background: #34709c;
+	border-radius:10px;
+} 
+
+.mainRight{
+	width: 85%;
+	height: 580px;
+	float: left;
+	margin-right: 0px;
+	margin-top: 0px;
+	background: #C0D9D9;
+	border-radius:10px;
+}
+/* 更新 */
+.main-menu{
+	margin-top: 0px;
+	padding: 0px;
+}
+.menu-option:hover{
+	cursor: pointer;
+}
+.nav-list{
+    margin-bottom: 0px;
+}
+
+.nav-list h3{
+    position: relative;/*相对位置*/
+    padding: 15px 0;
+    background-color: #3889d4;
+    transition: 0.5s;/*动画过渡效果*/
+	text-align: center;
+	color: white;
+    font-size: 20px;
+}
+
+.nav-list h3.on{/*给h3添加类名on用于效果变化提高性能 */
+    background-color: #393c4a;
+	    padding: 10px 0;
+	ovewflow
+	background-color: #282c3a;
+	color: white;
+	border-bottom:1px solid #42495d;
+	moz-user-select: -moz-none;    -moz-user-select: none;    -o-user-select:none;    -khtml-user-select:none;    -webkit-user-select:none;    -ms-user-select:none;    user-select:none;
+}
+
+.nav-list i{
+    position: absolute;/*绝对位置*/
+    top: 15px;   /*位置*/
+    right: 10px; /*位置*/
+    border: 8px solid transparent;/*transparent 全透明*/ /*画出3角形1*/
+    border-left-color: #fff;/*左边白色*/  /*画出3角形2*/
+    transform-origin: 1px 8px;/*旋转基点（x，y）*/
+    transform: rotate(0deg);/*旋转角度*/
+    transition: 1s;/*动画过渡效果*/
+}
+
+.nav-list i.on{
+    transform: rotate(90deg);/*旋转角度*/
+}
+
+.hide{
+    overflow: hidden;/*隐藏溢出部分*/
+    height: 0;
+    transition: 1s;/*动画过渡效果*/
+	text-align: center;
+}
+.hide h5{
+    padding: 10px 0;
+    ovewflow
+    background-color: #282c3a;
+	color: white;
+    border-bottom:1px solid #42495d;
+	moz-user-select: -moz-none;    -moz-user-select: none;    -o-user-select:none;    -khtml-user-select:none;    -webkit-user-select:none;    -ms-user-select:none;    user-select:none;
+}
+
+.button{
+	width: 100%;
+	height: 70px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.btn{
+	width: 100px;
+	height:50px;
+	margin-top: 10px;
+	background: #015293;
+	border-radius:5px;
+	display: inline;
+	font-size: 15px;
+	border: none;
+	color: white;
+}
+
+.text{
+	padding: 0px;
+	margin-top: 2px;
+	width: 100%;
+	height: 580px;
+	border: none;
+	border-radius:10px;
+}
+
+.child{
+	width: 100%;
+	height: 580px;
+	border: none;
+	border-radius:10px;
+	background: white
+}

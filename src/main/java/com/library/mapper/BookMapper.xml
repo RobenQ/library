@@ -1,0 +1,55 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.mapper.BookMapper">
+	<resultMap type="com.library.bean.Book" id="bookMap">
+		<id property="uuid" column="uuid"/>
+		<result property="bookName" column="book_name"/>
+		<result property="bookType" column="book_type"/>
+		<result property="author" column="author"/>
+		<result property="translator" column="translator"/>
+		<result property="publish" column="publish"/>
+		<result property="isbn" column="isbn"/>
+		<result property="price" column="price"/>
+		<result property="bookCase" column="book_case"/>
+		<result property="inTime" column="in_time"/>
+		<result property="page" column="page"/>
+		<result property="num" column="num"/>
+	</resultMap>
+	<select id="selAll" resultMap="bookMap">
+		select * from book;
+	</select>
+	<select id="selByBookName" resultMap="bookMap">
+		select * from book where book_name=#{bookName};
+	</select>
+	<select id="selByBookType" resultMap="bookMap">
+		select * from book where book_type=#{bookType};
+	</select>
+	<select id="selByBookAuthor" resultMap="bookMap">
+		select * from book where author=#{bookAuthor};
+	</select>
+	<select id="selByBookIsbn" resultMap="bookMap">
+		select * from book where isbn=#{bookIsbn};
+	</select>
+	<select id="selByBookIsbn2" resultMap="bookMap">
+		select * from book where isbn=#{bookIsbn};
+	</select>
+	<select id="selByBookPublish" resultMap="bookMap">
+		select * from book where publish=#{bookPublish};
+	</select>
+	<select id="selByUuid" resultMap="bookMap">
+		select * from book where uuid=#{uuid};
+	</select>
+	<delete id="deleteByUuid">
+		delete from book where uuid=#{uuid};
+	</delete>
+	<insert id="insertBook">
+		insert into book values(#{uuid},#{bookType},#{bookName},#{author},#{translator},#{publish},#{isbn},#{price},#{bookCase},#{inTime},#{page},#{num});
+	</insert>
+	<update id="addBook">
+		update book set num=(num+#{num}),in_time=#{inTime} where isbn=#{isbn};  
+	</update>
+	<update id="updateNum">
+		update book set num=(num-1) where uuid=#{uuid};
+	</update>
+</mapper>

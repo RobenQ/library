@@ -1,0 +1,63 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.mapper.UserMapper">
+	<resultMap type="com.library.bean.User" id="userMap">
+		<id property="id" column="id"/>
+		<result property="account" column="account"/>
+		<result property="pwd" column="pwd"/>
+		<result property="name" column="name"/>
+		<result property="sex" column="sex"/>
+		<result property="barcode" column="barcode"/>
+		<result property="readType" column="read_type"/>
+		<result property="tel" column="tel"/>
+		<result property="paperType" column="paper_type"/>
+		<result property="paperNo" column="paper_no"/>
+		<result property="inTime" column="in_time"/>
+		<result property="operator" column="operator"/>
+		<result property="num" column="num"/>
+		<result property="bollowed" column="bollowed"/>
+	</resultMap>
+	<select id="selAll" resultMap="userMap">
+		select * from user;
+	</select>
+	<select id="selByAccountAndPwd" resultMap="userMap">
+		select * from user where account=#{account} and pwd=#{pwd};
+	</select>
+	<select id="selByName" resultMap="userMap">
+		select * from user where name=#{name};
+	</select>
+	<select id="selBySex" resultMap="userMap">
+		select * from user where sex=#{sex};
+	</select>
+	<select id="selByreadType" resultMap="userMap">
+		select * from user where read_type=#{readType};
+	</select>
+	<select id="selByTel" resultMap="userMap">
+		select * from user where tel=#{Tel};
+	</select>
+	<select id="selByPaperNo" resultMap="userMap">
+		select * from user where paper_no=#{paperNo};
+	</select>
+	<select id="selByPaperNo2" resultMap="userMap">
+		select * from user where paper_no=#{paperNo};
+	</select>
+	<select id="selById" resultMap="userMap">
+		select * from user where id=#{id};
+	</select>
+	<delete id="deleteById">
+		delete from user where id=#{id};
+	</delete>
+	<insert id="insertUser">
+		insert into user values(#{id},#{account},#{pwd},#{name},#{sex},#{barcode},#{readType},#{tel},#{paperType},#{paperNo},#{inTime},#{operator},#{num},#{bollowed});
+	</insert>
+	<update id="updetPwd">
+		update user set pwd=#{pwd} where id=#{id};
+	</update>
+	<update id="updateBollowed">
+		update user set bollowed=(bollowed+1) where id=#{id}
+	</update>
+	<update id="updateBollowed2">
+		update user set bollowed=(bollowed-1) where id=#{id}
+	</update>
+</mapper>

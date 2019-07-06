@@ -1,0 +1,22 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+footer{
+	background: #015293;
+	position: absolute;
+	width: 1535px;
+	height: 150px;
+}
+.foot{
+	margin-top: 15px;
+	line-height: 37px;
+	background: #015293;
+	color: white;
+	text-align: center;
+	width: 70%;
+	margin-top: 3%;
+}
+p{
+	margin-left: 50%;
+}

@@ -1,0 +1,251 @@
+body {
+    background-image: url("../img/login.jpg");
+     background-color: #015293
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+button{
+    border: none;
+    outline: none;
+    background: none;
+}
+
+input{
+
+    background:none;
+    outline:none;
+    height: 48px;
+    border:0px;
+    width: 352px;
+}
+
+#employeeNum{
+	background:none;
+    outline:none;
+    height: 48px;
+    border:0px;
+    width: 225px;
+	
+}
+.Card {
+
+    background: #FFFFFF;
+    position: absolute;
+    width: 432px;
+    height: 428.625px;
+    margin-left: -216px;
+    margin-top: -250px;
+    top: 50%;
+    left: 50%;
+    display: block;
+    text-align: center;
+}
+
+.card_top {
+    padding-bottom: 5px;
+    padding-top: 40px;
+    width: 432px;
+    height: 148.625px;
+}
+
+.icon_logo {
+    position: absolute;
+    width: 145px;
+    height: 65.625px;
+
+    left: 50%;
+    margin-left: -72.5px;
+}
+
+.icon_banner {
+    position: relative;
+    width: 432px;
+    height: 33px;
+    text-align: center;
+    margin-top: 30px;
+    color: #ca2e18;
+    font-size: 22px;
+}
+
+.card_bottom {
+    width: 432px;
+    height: 280px;
+
+}
+
+.login_content {
+    width: 432px;
+    height: 284px;
+
+}
+
+.login_form_area {
+    width: 432px;
+    height: 284px;
+    padding: 0 40px 36px;
+    font-size: 14px;
+
+}
+
+.login_form {
+    width: 352px;
+    height: 207px;
+}
+
+.login-account {
+    width: 352px;
+    height: 48px;
+
+    border-bottom: 1px solid #EBEBEB;
+    border-radius: 0;
+}
+
+.id_select {
+    padding-top: 5px;
+    width: 109.45px;
+    height: 40px;
+    float: left;
+}
+
+/*div {*/
+/*width: 200 px;*/
+/*height: 40px;*/
+/*border-radius: 5px;*/
+/*box-shadow: 0 0 5 px #ccc;*/
+/*position: relative;*/
+/*}*/
+
+#select {
+    border: none;
+    outline: none;
+    color: #8590b3;
+    width: 75%;
+    height: 40px;
+    float: left;
+    line-height: 40px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor:pointer;
+    background:none;
+    padding-left: 10px;
+}
+.select_icon{
+    float: right;
+    margin-top: 8px;
+}
+
+.id_select :after {
+    content: "";
+    width: 14px;
+    height: 8px;
+    /*background: url(img/xiala.png) no-repeat center;*/
+    position: absolute;
+    right: 20px;
+    top: 45%;
+    pointer-events: none;
+}
+.login-accountSeperator{
+    float: left;
+    width: 1px;
+    height: 25px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background: #EBEBEB;
+    margin-top: 10px;
+
+}
+.account_input{
+    width: 224.547px;
+    height: 48px;
+    float: left;
+}
+.password_content{
+    width: 352px;
+    height: 80px;
+}
+.password_input{
+    width: 352px;
+    height: 48px;
+    margin-top: 12px;
+}
+.password_content_input{
+    width: 352px;
+    height: 48px;
+
+    border-bottom: 1px solid #EBEBEB;
+}
+.otherMethorToLogin{
+    width: 352px;
+    height: 20px;
+    padding-top: 12px;
+    text-align: right;
+}
+
+.submit{
+    display: inline-block;
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #8590A6;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    border: 1px solid;
+    border-radius: 3px;
+    width: 100%;
+    margin-top: 30px;
+    height: 36px;
+    color: #FFFFFF;
+    background-color: #ca2e18;
+    border-color: #ca2e18;
+}
+.Login-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 25px;
+    margin-top: 16px;
+    text-align: center;
+
+    width: 352px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

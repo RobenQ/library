@@ -1,0 +1,21 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.library.mapper.LibraryMsgMapper">
+		<resultMap type="com.library.bean.LibraryMsg" id="librarymsgMap">
+			<result property="name" column="name"/>
+			<result property="tel" column="tel"/>
+			<result property="adress" column="adress"/>
+			<result property="buildTime" column="build_time"/>
+			<result property="msg" column="msg"/>
+		</resultMap>
+		<select id="selLibraryMsg" resultMap="librarymsgMap">
+			select * from library_msg;
+		</select>
+		<delete id="deleteLibraryMsg">
+			delete from library_msg;
+		</delete>
+		<insert id="insertLibraryMsg">
+			insert into library_msg values(#{name},#{tel},#{adress},#{buildTime},#{msg})
+		</insert>
+	</mapper>

@@ -1,0 +1,26 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.library.mapper.AppointmentMapper">
+    	<resultMap type="com.library.bean.Appointment" id="appointmentMap">
+    		<id property="uuid" column="uuid"/>
+    		<result property="appointmentTime" column="appointment_time"/>
+    		<association property="userId" column="read_id" select="com.library.mapper.UserMapper.selById" />
+    		<association property="bookUuid" column="book_uuid" select="com.library.mapper.BookMapper.selByUuid"/>
+    	</resultMap>
+    	<insert id="insert">
+    		insert into appointment values(#{uuid},#{userId},#{bookUuid},#{appointmentTime});
+    	</insert>
+    	<select id="selAll" resultMap="appointmentMap">
+    		select * from appointment;
+    	</select>
+    	<delete id="deleteByUuid">
+    		delete from appointment where uuid=#{uuid};
+    	</delete>
+    	<select id="selByUuid" resultMap="appointmentMap">
+    		select  * from appointment where uuid=#{uuid};
+    	</select>
+    	<select id="selByReaderId" resultMap="appointmentMap">
+    		select  * from appointment where read_id=#{readerId};
+    	</select>
+    </mapper>

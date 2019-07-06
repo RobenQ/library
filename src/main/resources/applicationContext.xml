@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:beans xmlns:p="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd ">
+	<p:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<p:property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></p:property>
+		<p:property name="url" value="jdbc:mysql://127.0.0.1:3306/library?serverTimezone=GMT%2B8&amp;zeroDateTimeBehavior=convertToNull"></p:property>
+		<p:property name="username" value="root"></p:property>
+		<p:property name="password" value="ZQ1419276383.."></p:property>
+	</p:bean>
+
+	<p:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<p:property name="dataSource" ref="dataSource"></p:property>
+	</p:bean>
+
+	<p:bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<p:property name="basePackage" value="com.library.mapper"></p:property>
+		<p:property name="sqlSessionFactory" ref="sqlSessionFactory"></p:property>
+	</p:bean>
+	<!-- 事务管理 -->
+	<p:bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<p:property name="dataSource" ref="dataSource" ></p:property>
+	</p:bean>
+</p:beans>

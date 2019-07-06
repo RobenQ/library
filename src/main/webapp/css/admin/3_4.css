@@ -1,0 +1,65 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+.list{
+	height: 300px;
+	width: 100%;
+	overflow: auto;
+	background: white;
+}
+.table{
+	background: white;
+	color: #F54809;
+	width: 100%;
+	border: none;
+}
+.table tr{
+	border: black 1px solid;
+	height: 35px;
+}
+.tr{
+	border: black 1px solid;
+	background: white;
+	font-size: 20px;
+}
+.tr td{
+	border-collapse: collapse;
+	text-align: center;
+}
+.relative td{
+	text-align: center;
+}
+.relative td button{
+	width: 70px;
+	border-radius: 4px;
+	outline: none;
+	border: none;
+	height:30px;
+}
+.source:hover{
+	cursor: pointer;
+}
+
+.btn{
+	color: white;
+	background: #F54809;
+}
+
+

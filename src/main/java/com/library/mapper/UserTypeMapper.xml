@@ -1,0 +1,22 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.library.mapper.UserTypeMapper">
+    	<resultMap type="com.library.bean.UserType" id="usertypeMap">
+    		<id property="uuid" column="uuid"/>
+    		<result property="typeName" column="type_name"/>
+    		<result property="num" column="num"/>
+    	</resultMap>
+    	<select id="selAll" resultMap="usertypeMap">
+    		select * from user_type;
+    	</select>
+    	<select id="selByName" resultMap="usertypeMap">
+    		select * from user_type where type_name=#{typeName};
+    	</select>
+    	<delete id="deleteByUuid">
+    		delete from user_type where uuid=#{uuid};
+    	</delete>
+    	<insert id="insert">
+    		insert into user_type values(#{uuid},#{typeName},#{num})
+    	</insert>
+    </mapper>

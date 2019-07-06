@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.library.mapper.BollowMapper">
+    	<resultMap type="com.library.bean.Bollow" id="bollowMap">
+    		<id property="uuid" column="uuid"/>
+    		<result property="outTime" column="out_time"/>
+    		<result property="shouldTime" column="should_time"/>
+    		<result property="factTime" column="fact_time"/>
+    		<result property="isReturn" column="returned"/>
+    		<association property="userId" column="reader_id" select="com.library.mapper.UserMapper.selById" />
+    		<association property="bookUuid" column="book_uuid" select="com.library.mapper.BookMapper.selByUuid"/>
+    	</resultMap>
+    	<insert id="insertBollow">
+    	insert into bollow values(#{uuid},#{reader},#{bookUuid},#{outTime},date_add(#{outTime},interval #{shouldTime} day),#{factTime},#{isReture});
+    	</insert>
+    	<select id="selByReaderId" resultMap="bollowMap">
+    		select * from bollow where reader_id=#{readerId} and returned=false;
+    	</select>
+    	<select id="selByReaderId2" resultMap="bollowMap">
+    		select * from bollow where reader_id=#{readerId} and returned=true;
+    	</select>
+    	<select id="selNoReturn" resultMap="bollowMap">
+    		select * from bollow where returned=false;
+    	</select>
+    	<select id="selYesReturn" resultMap="bollowMap">
+    		select * from bollow where returned=true;
+    	</select>
+    	<update id="updateReturned">
+    		update bollow set returned=true where uuid=#{uuid};
+    	</update>
+    	<select id="selByUuid" resultMap="bollowMap">
+    		select * from bollow where uuid=#{uuid};
+    	</select>
+    	<select id="selAll" resultMap="bollowMap">
+    		select * from bollow;
+    	</select>
+    </mapper>
